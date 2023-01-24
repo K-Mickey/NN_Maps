@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d074148eb1d4288d56eaaf3f2a334c19 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+    <script src="https://unpkg.com/leaflet.featuregroup.subgroup@1.0.2/dist/leaflet.featuregroup.subgroup.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_d074148eb1d4288d56eaaf3f2a334c19" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d074148eb1d4288d56eaaf3f2a334c19 = L.map(
+                "map_d074148eb1d4288d56eaaf3f2a334c19",
+                {
+                    center: [56.3287, 44.002],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_df2dbd2b40efb22b00e124ddcb2c4cb5 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_d074148eb1d4288d56eaaf3f2a334c19);
+        
+    
+            var tile_layer_2fe19a0d5459f72c3c2a636eb71c8c07 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_d074148eb1d4288d56eaaf3f2a334c19);
+        
+    
+            var tile_layer_8a07af54d278783b0cd05b0a5bd3bb8a = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_d074148eb1d4288d56eaaf3f2a334c19);
+        
+    
+            var tile_layer_a518a7d4694680b440f5862cbc8b0e65 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_d074148eb1d4288d56eaaf3f2a334c19);
+        
+    
+            var tile_layer_ace1a77f432df0f8de7d6346566ba356 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_d074148eb1d4288d56eaaf3f2a334c19);
+        
+    
+            var tile_layer_7215899e926b0d5e03830fd2165c4afa = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_1054b867cace9ab8b1b5da6d93c02dcf = new L.Control.MiniMap(
+                tile_layer_7215899e926b0d5e03830fd2165c4afa,
+                {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": false, "position": "bottomright", "toggleDisplay": true, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
+            );
+            map_d074148eb1d4288d56eaaf3f2a334c19.addControl(mini_map_1054b867cace9ab8b1b5da6d93c02dcf);
+        
+    
+            var feature_group_091af210b594706a07b781e3c3a5b1a4 = L.featureGroup(
+                {}
+            ).addTo(map_d074148eb1d4288d56eaaf3f2a334c19);
+        
+    
+            var feature_group_sub_group_5d6c9db2ac524d6a4bd903929526c2b2 = L.featureGroup.subGroup(
+                feature_group_091af210b594706a07b781e3c3a5b1a4
+            );
+            feature_group_sub_group_5d6c9db2ac524d6a4bd903929526c2b2.addTo(map_d074148eb1d4288d56eaaf3f2a334c19);
+        
+    
+            var marker_a7ccd2378222f7d69b781700a4ff81c0 = L.marker(
+                [56.33371, 43.971393],
+                {}
+            ).addTo(feature_group_sub_group_5d6c9db2ac524d6a4bd903929526c2b2);
+        
+    
+            var icon_1223d9d90d2623f27613197fe4073a84 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a7ccd2378222f7d69b781700a4ff81c0.setIcon(icon_1223d9d90d2623f27613197fe4073a84);
+        
+    
+        var popup_a2c2c2cab3a28b8040a0a83f7109c30f = L.popup({"maxWidth": 450, "size": 20});
+
+        
+            
+                var html_ebccdb639966e85b2d15673e5351e7d1 = $(`<div id="html_ebccdb639966e85b2d15673e5351e7d1" style="width: 100.0%; height: 100.0%;">Собор святого благоверного князя Александра Невского — православный храм в историческом центре Нижнего Новгорода, на стрелке Волги и Оки.</div>`)[0];
+                popup_a2c2c2cab3a28b8040a0a83f7109c30f.setContent(html_ebccdb639966e85b2d15673e5351e7d1);
+            
+        
+
+        marker_a7ccd2378222f7d69b781700a4ff81c0.bindPopup(popup_a2c2c2cab3a28b8040a0a83f7109c30f)
+        ;
+
+        
+    
+    
+            marker_a7ccd2378222f7d69b781700a4ff81c0.bindTooltip(
+                `<div>
+                     Собор Александра Невского
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1e7f6eee977966a82f28762ad78be3c4 = L.marker(
+                [56.327337, 43.984922],
+                {}
+            ).addTo(feature_group_sub_group_5d6c9db2ac524d6a4bd903929526c2b2);
+        
+    
+            var icon_71781ca47060b638c5405306fe53eff5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_1e7f6eee977966a82f28762ad78be3c4.setIcon(icon_71781ca47060b638c5405306fe53eff5);
+        
+    
+        var popup_4fbea220193e80a960f6138afdae4c14 = L.popup({"maxWidth": 450, "size": 20});
+
+        
+            
+                var html_2f8cdec687f08de47602d86300249599 = $(`<div id="html_2f8cdec687f08de47602d86300249599" style="width: 100.0%; height: 100.0%;">Церковь Собора Пресвятой Богородицы, более известная как Рожде́ственская или Стро́гановская — действующая православная церковь, расположенная на Рождественской улице Нижнего Новгорода. Построена в 1696 — 1719 годах на средства купца Григория Дмитриевича Строганова.</div>`)[0];
+                popup_4fbea220193e80a960f6138afdae4c14.setContent(html_2f8cdec687f08de47602d86300249599);
+            
+        
+
+        marker_1e7f6eee977966a82f28762ad78be3c4.bindPopup(popup_4fbea220193e80a960f6138afdae4c14)
+        ;
+
+        
+    
+    
+            marker_1e7f6eee977966a82f28762ad78be3c4.bindTooltip(
+                `<div>
+                     Церковь Пресвятой Богородицы
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9fccff9e2a8a2734dfbd2533154b0e6a = L.marker(
+                [56.323525, 44.047257],
+                {}
+            ).addTo(feature_group_sub_group_5d6c9db2ac524d6a4bd903929526c2b2);
+        
+    
+            var icon_4e9c757cca5b6b2bef8dd5b1cecc63f7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9fccff9e2a8a2734dfbd2533154b0e6a.setIcon(icon_4e9c757cca5b6b2bef8dd5b1cecc63f7);
+        
+    
+        var popup_f13d5592f7c846b3c95470debcb6d93e = L.popup({"maxWidth": 450, "size": 20});
+
+        
+            
+                var html_d2638b7d9fa94a5158c81a360647dc69 = $(`<div id="html_d2638b7d9fa94a5158c81a360647dc69" style="width: 100.0%; height: 100.0%;">Мужской монастырь Нижегородской епархии Русской православной церкви в Нижнем Новгороде.</div>`)[0];
+                popup_f13d5592f7c846b3c95470debcb6d93e.setContent(html_d2638b7d9fa94a5158c81a360647dc69);
+            
+        
+
+        marker_9fccff9e2a8a2734dfbd2533154b0e6a.bindPopup(popup_f13d5592f7c846b3c95470debcb6d93e)
+        ;
+
+        
+    
+    
+            marker_9fccff9e2a8a2734dfbd2533154b0e6a.bindTooltip(
+                `<div>
+                     Печёрский Вознесенский Монастырь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_sub_group_e74259ce2c6bf3f254b952f48a173244 = L.featureGroup.subGroup(
+                feature_group_091af210b594706a07b781e3c3a5b1a4
+            );
+            feature_group_sub_group_e74259ce2c6bf3f254b952f48a173244.addTo(map_d074148eb1d4288d56eaaf3f2a334c19);
+        
+    
+            var marker_9dae71628ad13da516dc3e7381eab3f6 = L.marker(
+                [56.326344, 44.003523],
+                {}
+            ).addTo(feature_group_sub_group_e74259ce2c6bf3f254b952f48a173244);
+        
+    
+            var icon_f1b86cd26c649e3fb129f2fba0a9540b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9dae71628ad13da516dc3e7381eab3f6.setIcon(icon_f1b86cd26c649e3fb129f2fba0a9540b);
+        
+    
+        var popup_a795e5e186438bd3bf7da45389a7d056 = L.popup({"maxWidth": 450, "size": 20});
+
+        
+            
+                var html_1883e87c0333e6e6f84d951019dcec1d = $(`<div id="html_1883e87c0333e6e6f84d951019dcec1d" style="width: 100.0%; height: 100.0%;">Нижегородский кремль, памятник истории и культуры всемирного значения. Воздвигнутый в начале 16 века для защиты восточных рубежей русского государства, он ни разу не сдался врагу!</div>`)[0];
+                popup_a795e5e186438bd3bf7da45389a7d056.setContent(html_1883e87c0333e6e6f84d951019dcec1d);
+            
+        
+
+        marker_9dae71628ad13da516dc3e7381eab3f6.bindPopup(popup_a795e5e186438bd3bf7da45389a7d056)
+        ;
+
+        
+    
+    
+            marker_9dae71628ad13da516dc3e7381eab3f6.bindTooltip(
+                `<div>
+                     Кремль
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_001a39059748cb90946442f3ee5c1505 = L.marker(
+                [56.3284333, 43.9609306],
+                {}
+            ).addTo(feature_group_sub_group_e74259ce2c6bf3f254b952f48a173244);
+        
+    
+            var icon_393875f486cf46d1eb5b7175e172c57e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_001a39059748cb90946442f3ee5c1505.setIcon(icon_393875f486cf46d1eb5b7175e172c57e);
+        
+    
+        var popup_f85fca2fbd8daaaf6b495067d4fb48bc = L.popup({"maxWidth": 450, "size": 20});
+
+        
+            
+                var html_0dafec0119e70882429e14402b8d38ef = $(`<div id="html_0dafec0119e70882429e14402b8d38ef" style="width: 100.0%; height: 100.0%;">Нижегородская ярмарка — исторический район, где располагалась крупнейшая ярмарка Российской империи. Центральный выставочный центр Нижнего Новгорода.</div>`)[0];
+                popup_f85fca2fbd8daaaf6b495067d4fb48bc.setContent(html_0dafec0119e70882429e14402b8d38ef);
+            
+        
+
+        marker_001a39059748cb90946442f3ee5c1505.bindPopup(popup_f85fca2fbd8daaaf6b495067d4fb48bc)
+        ;
+
+        
+    
+    
+            marker_001a39059748cb90946442f3ee5c1505.bindTooltip(
+                `<div>
+                     Ярмарка
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_98b799a7b1db8ea3fd767d615eae8134 = L.marker(
+                [56.329641, 43.992862],
+                {}
+            ).addTo(feature_group_sub_group_e74259ce2c6bf3f254b952f48a173244);
+        
+    
+            var icon_ec2d1dccbeb951d0a4b3e93c1f4f62c8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_98b799a7b1db8ea3fd767d615eae8134.setIcon(icon_ec2d1dccbeb951d0a4b3e93c1f4f62c8);
+        
+    
+        var popup_dfe3d56152ce07b395d6e1d85dac4c32 = L.popup({"maxWidth": 450, "size": 20});
+
+        
+            
+                var html_1a1dc6a4df7afe6143890a0456fb1706 = $(`<div id="html_1a1dc6a4df7afe6143890a0456fb1706" style="width: 100.0%; height: 100.0%;">Здание является одним из двух корпусов комплекса банка Рукавишниковых, один из которых выходит на ул. Рождественскую, второй – на Нижне-Волжскую набережную. Он расположен в пределах обширного исторического района Нижний Посад, в зоне торговых представительств.</div>`)[0];
+                popup_dfe3d56152ce07b395d6e1d85dac4c32.setContent(html_1a1dc6a4df7afe6143890a0456fb1706);
+            
+        
+
+        marker_98b799a7b1db8ea3fd767d615eae8134.bindPopup(popup_dfe3d56152ce07b395d6e1d85dac4c32)
+        ;
+
+        
+    
+    
+            marker_98b799a7b1db8ea3fd767d615eae8134.bindTooltip(
+                `<div>
+                     Банк Рукавишниковых
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5d42a84213abc818011b7be0eb3dcd4d = L.marker(
+                [56.320343, 43.998771],
+                {}
+            ).addTo(feature_group_sub_group_e74259ce2c6bf3f254b952f48a173244);
+        
+    
+            var icon_73c45d1ccd72548885c7b5ce84993bb5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5d42a84213abc818011b7be0eb3dcd4d.setIcon(icon_73c45d1ccd72548885c7b5ce84993bb5);
+        
+    
+        var popup_36db9f9e7a451932c6b7c2bf1b436f7b = L.popup({"maxWidth": 450, "size": 20});
+
+        
+            
+                var html_6f97a6d5bf8960a1adc34341790ae000 = $(`<div id="html_6f97a6d5bf8960a1adc34341790ae000" style="width: 100.0%; height: 100.0%;">Нижегородское отделение Государственного банка — одно из немногих в стране зданий, никогда не менявших своих функций и архитектурного облика. Сооружение сочетает в себе черты романской архитектуры и русского зодчества XVII века, выражая тем самым идею величия Императорской России, её несломленности и верности патриархальным традициям.</div>`)[0];
+                popup_36db9f9e7a451932c6b7c2bf1b436f7b.setContent(html_6f97a6d5bf8960a1adc34341790ae000);
+            
+        
+
+        marker_5d42a84213abc818011b7be0eb3dcd4d.bindPopup(popup_36db9f9e7a451932c6b7c2bf1b436f7b)
+        ;
+
+        
+    
+    
+            marker_5d42a84213abc818011b7be0eb3dcd4d.bindTooltip(
+                `<div>
+                     Государственный банк
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_sub_group_2c1853efcfeed3ff81fc5d4afbb8c524 = L.featureGroup.subGroup(
+                feature_group_091af210b594706a07b781e3c3a5b1a4
+            );
+            feature_group_sub_group_2c1853efcfeed3ff81fc5d4afbb8c524.addTo(map_d074148eb1d4288d56eaaf3f2a334c19);
+        
+    
+            var marker_77f56123257519bc97e952089b570b8e = L.marker(
+                [56.330175, 44.009718],
+                {}
+            ).addTo(feature_group_sub_group_2c1853efcfeed3ff81fc5d4afbb8c524);
+        
+    
+            var icon_fa4c199e64113a40a9cae65e42213140 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_77f56123257519bc97e952089b570b8e.setIcon(icon_fa4c199e64113a40a9cae65e42213140);
+        
+    
+        var popup_6687fb638f586bd645d96abd58920629 = L.popup({"maxWidth": 450, "size": 20});
+
+        
+            
+                var html_8cc59be6957cf15a4d40c05f88746f1f = $(`<div id="html_8cc59be6957cf15a4d40c05f88746f1f" style="width: 100.0%; height: 100.0%;">Монументальная лестница в историческом центре Нижнего Новгорода, соединяющая Верхне-Волжскую и Нижне-Волжскую набережные.</div>`)[0];
+                popup_6687fb638f586bd645d96abd58920629.setContent(html_8cc59be6957cf15a4d40c05f88746f1f);
+            
+        
+
+        marker_77f56123257519bc97e952089b570b8e.bindPopup(popup_6687fb638f586bd645d96abd58920629)
+        ;
+
+        
+    
+    
+            marker_77f56123257519bc97e952089b570b8e.bindTooltip(
+                `<div>
+                     Чкаловская лестница
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5d90c464d7884e72edc81b5fb5b8952c = L.marker(
+                [56.336845, 43.963868],
+                {}
+            ).addTo(feature_group_sub_group_2c1853efcfeed3ff81fc5d4afbb8c524);
+        
+    
+            var icon_7370c035da317c7daaa7943837cb4995 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5d90c464d7884e72edc81b5fb5b8952c.setIcon(icon_7370c035da317c7daaa7943837cb4995);
+        
+    
+        var popup_89b56faf64404ed90c7a80a532b9583f = L.popup({"maxWidth": 450, "size": 20});
+
+        
+            
+                var html_f70cba0d3c1fd80f994e39c2cf33395e = $(`<div id="html_f70cba0d3c1fd80f994e39c2cf33395e" style="width: 100.0%; height: 100.0%;">«Ни́жний Но́вгород» — футбольный стадион международного класса. Расположен в одноимённом городе на Стрелке — месте впадения реки Оки в Волгу. Является домашней ареной футбольного клуба «Пари Нижний Новгород» и используется в качестве многофункционального спортивного комплекса.</div>`)[0];
+                popup_89b56faf64404ed90c7a80a532b9583f.setContent(html_f70cba0d3c1fd80f994e39c2cf33395e);
+            
+        
+
+        marker_5d90c464d7884e72edc81b5fb5b8952c.bindPopup(popup_89b56faf64404ed90c7a80a532b9583f)
+        ;
+
+        
+    
+    
+            marker_5d90c464d7884e72edc81b5fb5b8952c.bindTooltip(
+                `<div>
+                     Футбольный стадион
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_85e4a734857d743626ddfdeabb146d80 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_df2dbd2b40efb22b00e124ddcb2c4cb5,
+                    "stamentoner" : tile_layer_2fe19a0d5459f72c3c2a636eb71c8c07,
+                    "stamenwatercolor" : tile_layer_8a07af54d278783b0cd05b0a5bd3bb8a,
+                    "cartodbpositron" : tile_layer_a518a7d4694680b440f5862cbc8b0e65,
+                    "cartodbdark_matter" : tile_layer_ace1a77f432df0f8de7d6346566ba356,
+                },
+                overlays :  {
+                    "\u0412\u0441\u0435 \u043c\u0435\u0442\u043a\u0438" : feature_group_091af210b594706a07b781e3c3a5b1a4,
+                    "\u0426\u0435\u0440\u043a\u0432\u0438" : feature_group_sub_group_5d6c9db2ac524d6a4bd903929526c2b2,
+                    "\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435" : feature_group_sub_group_e74259ce2c6bf3f254b952f48a173244,
+                    "\u0414\u0440\u0443\u0433\u0438\u0435" : feature_group_sub_group_2c1853efcfeed3ff81fc5d4afbb8c524,
+                },
+            };
+            L.control.layers(
+                layer_control_85e4a734857d743626ddfdeabb146d80.base_layers,
+                layer_control_85e4a734857d743626ddfdeabb146d80.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_d074148eb1d4288d56eaaf3f2a334c19);
+            tile_layer_2fe19a0d5459f72c3c2a636eb71c8c07.remove();
+            tile_layer_8a07af54d278783b0cd05b0a5bd3bb8a.remove();
+            tile_layer_a518a7d4694680b440f5862cbc8b0e65.remove();
+            tile_layer_ace1a77f432df0f8de7d6346566ba356.remove();
+        
+</script>
+</html>
